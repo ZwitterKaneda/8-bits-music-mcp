@@ -1,11 +1,10 @@
-import * as Tone from 'tone';
 import { MelodyParams, GenerationResult } from '../types.js';
 import { NoteValidator, ParameterValidator } from '../validators/index.js';
-import { createInstrument } from '../instruments/index.js';
 
 export class MelodyGenerator {
   static async generate(params: MelodyParams): Promise<GenerationResult> {
     try {
+      // Validations
       if (!ParameterValidator.validateNotesCount(params.notes)) {
         return {
           success: false,
@@ -34,36 +33,18 @@ export class MelodyGenerator {
         };
       }
 
-      const durationValidation = NoteValidator.validateDurations(params.durations);
-      if (!durationValidation.valid) {
-        return {
-          success: false,
-          trackId: '',
-          message: `Invalid durations: ${durationValidation.invalidDurations.join(', ')}`,
-          error: 'INVALID_DURATIONS'
-        };
-      }
-
-      await Tone.start();
-      
-      if (Tone.Transport && Tone.Transport.bpm) {
-        Tone.Transport.bpm.value = params.bpm;
-      }
-
-      const instrument = createInstrument({
-        type: params.instrument,
-        volume: -10
-      });
+      // Calculate duration without Tone.js
+      const durationMap: Record<string, number> = {
+        '1n': 4,
+        '2n': 2,
+        '4n': 1,
+        '8n': 0.5,
+        '16n': 0.25
+      };
 
       let totalDuration = 0;
-      const now = Tone.now();
-      let time = now;
-
-      for (let i = 0; i < params.notes.length; i++) {
-        instrument.playNote(params.notes[i], params.durations[i], time);
-        const noteDuration = Tone.Time(params.durations[i]).toSeconds();
-        time += noteDuration;
-        totalDuration += noteDuration;
+      for (const dur of params.durations) {
+        totalDuration += (durationMap[dur] || 1) * (60 / params.bpm);
       }
 
       const trackId = `melody_${Date.now()}`;
@@ -71,7 +52,7 @@ export class MelodyGenerator {
       return {
         success: true,
         trackId,
-        message: `8-bit melody generated successfully with ${params.notes.length} notes`,
+        message: `8-bit melody created: ${params.notes.length} notes at ${params.bpm} BPM with ${params.instrument} wave`,
         duration: totalDuration,
         data: {
           notes: params.notes,

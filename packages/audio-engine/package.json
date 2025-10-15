@@ -1,6 +1,6 @@
 {
   "name": "@zwitterkaneda/8bits-music-audio-engine",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Audio engine for generating 8-bit music",
   "type": "module",
   "main": "dist/index.js",

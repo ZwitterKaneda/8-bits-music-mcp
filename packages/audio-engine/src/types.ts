@@ -52,3 +52,9 @@ export interface InstrumentConfig {
   sustain?: number;
   release?: number;
 }
+
+export interface ChordParams {
+  key: string;
+  progression: string;
+  voicing: string;
+}
