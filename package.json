@@ -1,6 +1,6 @@
 {
   "name": "8-bits-music-mcp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Model Context Protocol server for generating authentic 8-bit music",
   "main": "packages/mcp-server/dist/server.js",
   "type": "module",
