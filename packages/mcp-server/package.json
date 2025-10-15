@@ -1,6 +1,6 @@
 {
   "name": "@zwitterkaneda/8bits-music-mcp-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MCP server for generating 8-bit music",
   "type": "module",
   "main": "dist/server.js",
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
-    "@zwitterkaneda/8bits-music-audio-engine": "file:../audio-engine",
+    "@zwitterkaneda/8bits-music-audio-engine": "^0.1.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {

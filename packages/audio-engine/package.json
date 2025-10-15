@@ -4,11 +4,17 @@
   "description": "Audio engine for generating 8-bit music",
   "type": "module",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
-    "test": "node dist/test.js"
+    "test": "node dist/test.js",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "tone": "^15.1.22",
@@ -24,8 +30,18 @@
     "music",
     "audio",
     "synthesis",
-    "tonejs"
+    "tonejs",
+    "chiptune",
+    "retro"
   ],
   "author": "Daniel Díaz",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZwitterKaneda/8-bits-music-mcp.git",
+    "directory": "packages/audio-engine"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }

@@ -1,6 +1,6 @@
 {
   "name": "8-bits-music-mcp",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Model Context Protocol server for generating authentic 8-bit music",
   "main": "packages/mcp-server/dist/server.js",
   "type": "module",
@@ -9,7 +9,6 @@
   },
   "files": [
     "packages/mcp-server/dist/**/*",
-    "packages/audio-engine/dist/**/*",
     "README.md",
     "LICENSE"
   ],
@@ -52,6 +51,7 @@
   ],
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
+    "@zwitterkaneda/8bits-music-audio-engine": "^0.1.0",
     "tone": "^15.0.0",
     "zod": "^3.22.4"
   }
