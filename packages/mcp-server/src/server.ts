@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { z } from 'zod';
 import { Tool } from './tool.js';
 import { MelodyParams } from './types.js';
