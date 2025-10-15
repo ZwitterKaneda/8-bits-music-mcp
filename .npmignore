@@ -1,4 +1,5 @@
-# Development files
+# Development files (source)
+src/
 *.ts
 !*.d.ts
 tsconfig.json
@@ -15,9 +16,8 @@ __tests__/
 .gitlab-ci.yml
 .travis.yml
 
-# Documentation (opcional, si no quieres incluirla)
+# Documentation source
 docs/
-examples/
 
 # IDE
 .vscode/
@@ -30,7 +30,11 @@ examples/
 .gitignore
 .gitattributes
 
-# Others
-node_modules/
-.DS_Store
+# Build artifacts to ignore
+*.tsbuildinfo
+
+# Logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
