@@ -1,0 +1,36 @@
+# Development files
+*.ts
+!*.d.ts
+tsconfig.json
+.eslintrc*
+.prettierrc*
+
+# Tests
+__tests__/
+*.test.*
+*.spec.*
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Documentation (opcional, si no quieres incluirla)
+docs/
+examples/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Others
+node_modules/
+.DS_Store
+*.log

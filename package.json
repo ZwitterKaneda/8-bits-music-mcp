@@ -1,36 +1,44 @@
 {
-  "name": "8bits-music-mcp",
-  "version": "0.1.0",
-  "description": "MCP server for generating 8-bit music with integrated audio engine",
+  "name": "8-bits-music-mcp",
+  "version": "1.0.0",
+  "description": "A Model Context Protocol server for generating authentic 8-bit music",
+  "main": "packages/mcp-server/dist/server.js",
   "type": "module",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "build": "npm run build --workspaces",
-    "dev": "npm run dev --workspace=packages/mcp-server",
-    "start": "npm start --workspace=packages/mcp-server",
-    "test": "npm test --workspaces",
-    "clean": "rm -rf packages/*/dist packages/*/node_modules",
-    "install:all": "npm install",
-    "build:server": "npm run build --workspace=packages/mcp-server",
-    "build:engine": "npm run build --workspace=packages/audio-engine"
-  },
   "keywords": [
     "mcp",
-    "8bit",
+    "model-context-protocol",
+    "8-bit",
     "music",
+    "chiptune",
+    "tone.js",
     "audio",
-    "tonejs"
+    "midi",
+    "wav",
+    "retro",
+    "game-music",
+    "claude",
+    "ai-tools"
   ],
-  "author": "Daniel Díaz",
+  "author": "Daniel Díaz <tu-email@example.com>",
   "license": "MIT",
-  "devDependencies": {
-    "@types/node": "^20.0.0",
-    "typescript": "^5.0.0"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZwitterKaneda/8-bits-music-mcp.git"
   },
+  "bugs": {
+    "url": "https://github.com/ZwitterKaneda/8-bits-music-mcp/issues"
+  },
+  "homepage": "https://github.com/ZwitterKaneda/8-bits-music-mcp#readme",
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "dev": "npm run dev --workspaces",
+    "test": "npm run test --workspaces",
+    "prepublishOnly": "npm run build"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }
