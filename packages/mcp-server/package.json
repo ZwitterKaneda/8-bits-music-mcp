@@ -1,0 +1,31 @@
+{
+  "name": "@zwitterkaneda/8bits-music-mcp-server",
+  "version": "0.1.0",
+  "description": "MCP server for generating 8-bit music",
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsx src/server.ts",
+    "test:integration": "tsx src/integration-test.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@zwitterkaneda/8bits-music-audio-engine": "file:../audio-engine",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "8bit",
+    "music",
+    "audio"
+  ],
+  "author": "Daniel Díaz",
+  "license": "MIT"
+}

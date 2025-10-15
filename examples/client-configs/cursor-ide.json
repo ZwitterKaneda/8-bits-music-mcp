@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "8bits-music": {
+      "command": "node",
+      "args": ["/path/to/your/8bits-music-mcp/packages/mcp-server/dist/server.js"]
+    }
+  }
+}

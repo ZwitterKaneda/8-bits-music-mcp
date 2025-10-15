@@ -1,0 +1,31 @@
+{
+  "name": "@zwitterkaneda/8bits-music-audio-engine",
+  "version": "0.1.0",
+  "description": "Audio engine for generating 8-bit music",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "test": "node dist/test.js"
+  },
+  "dependencies": {
+    "tone": "^15.1.22",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "8bit",
+    "music",
+    "audio",
+    "synthesis",
+    "tonejs"
+  ],
+  "author": "Daniel Díaz",
+  "license": "MIT"
+}
